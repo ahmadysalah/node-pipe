@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 
-app.set('port', (process.env.PORT || 4000));
+const PORT = process.env.PORT ? process.env.PORT : 8000;
 
 // routes 
 // send device name and time
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 );
 
 // listen for requests
-app.listen(app.get('port'), () => {
-    console.log(`http://localhost:${app.get('port')}`);
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
 }
 );
