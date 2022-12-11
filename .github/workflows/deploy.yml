@@ -46,4 +46,5 @@ jobs:
              git pull origin main
              npm install
              npm run build
+             pm2 start 'npm start:prod' --name api
              pm2 restart api
