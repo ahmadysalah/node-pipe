@@ -43,8 +43,12 @@ jobs:
             . ~/.nvm/nvm.sh
              nvm instal 14
              npm install -g pm2
-             cd ~/CICD
-             git pull origin main
+             mkdir -p /home/api
+             cd /home/api
+             git clone https://github.com/ahmadysalah/node-pipe.git
+             cd node-pipe
              npm install
-             npm run build
-             pm2 restart api
+             pm2 start npm --name "api" -- start
+             pm2 save
+             pm2 startup
+             pm2 status
