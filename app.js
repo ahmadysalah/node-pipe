@@ -10,7 +10,7 @@ const PORT = process.env.PORT ? process.env.PORT : 8000;
 // send device name and time
 
 app.get('/', (req, res) => {
-    res.send(`Hello ${new Date()} ${req.hostname}`);
+    res.send(`Hello man`);
 }
 );
 

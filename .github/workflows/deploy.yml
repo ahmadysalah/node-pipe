@@ -42,13 +42,8 @@ jobs:
             . ~/.nvm/nvm.sh
              nvm instal 14
              npm install -g pm2
-             mkdir -p /home/ubuntu/api
-             cd /home/ubuntu/api
-             git init
-             git remote add origin https://github.com/ahmadysalah/node-pipe.git
+             cd ~/CICD
              git pull origin main
              npm install
-             pm2 start npm --name "api" -- start:prod
-             pm2 save
-             pm2 startup
-             pm2 restart all
+             npm run build
+             pm2 restart api
