@@ -8,7 +8,7 @@ app.set('port', (process.env.PORT || 4000));
 // send device name and time
 
 app.get('/', (req, res) => {
-    res.send(`Hello World! ${new Date()} ${req.hostname}`);
+    res.send(`Hello ${new Date()} ${req.hostname}`);
 }
 );
 
